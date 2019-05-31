@@ -32,8 +32,9 @@ fahr_to_kelvin <- function(temp) {
 
 
 Fahr_to_Cel <- function (farenheit){
-  kelvin 
-  
-  something
+  kelvin <- fahr_to_kelvin(farenheit)
+  celsius <- KtoC(kelvin)
+  return(celsius)
 }
 
+Fahr_to_Cel(35)
