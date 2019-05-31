@@ -1,0 +1,41 @@
+---
+title: "Research Paper"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      error = FALSE)
+```
+
+## Introduction
+This is _amazing_ and **great**!
+
+### Subheading
+A link to my site: [mysite](https://google.com)
+
+```{r}
+library(ggplot2)
+# read gapminder data
+data <- read.csv("data/gapminder_data.csv", stringsAsFactors = FALSE)
+
+head(data)
+```
+
+## Life Expectancy in Rwanda
+```{r, fig.width=5, fig.height=3}
+data_rwanda <- data[data$country=="Rwanda",]
+
+ggplot(data_rwanda, aes(x=year, y=lifeExp)) +
+  geom_line()
+```
+
+In 1992 the life expectancy in Rwanda fell to **`r min(data_rwanda$lifeExp)`**
+
+```{r}
+library(knitr)
+kable(head(data))
+```
+
